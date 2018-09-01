@@ -6,6 +6,17 @@ import Nav from './Nav';
 
 class Upload extends Component {
 
+ uploadWidget = () => {
+    window.cloudinary.openUploadWidget(
+      { cloud_name: 'dpinvzmoj',
+        upload_preset: 'znazphfs',
+        tags: ['miniflix'],
+        sources: ['local', 'url', 'google_photos', 'facebook', 'image_search']
+      },
+      function(error, result) {
+          console.log("This is the result of the last upload", result);
+      });
+  }
 
   render() {
 
@@ -17,7 +28,7 @@ class Upload extends Component {
 
         <div className="col-sm-12">
           <div className="jumbotron text-center">
-            <button className="btn btn-lg btn-info"> Upload Video</button>
+            <button  onClick={this.uploadWidget} className="btn btn-lg btn-info"> Upload Video</button>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import Nav from './Nav';
+import { CloudinaryContext, Transformation, Video } from 'cloudinary-react';
 import { isLoggedIn } from '../utils/AuthService';
 import axios from 'axios';
 
